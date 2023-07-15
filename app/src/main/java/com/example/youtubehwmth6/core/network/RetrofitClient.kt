@@ -1,5 +1,6 @@
 package com.example.youtubehwmth6.core.network
 
+import com.example.youtubehwmth6.BuildConfig
 import com.example.youtubehwmth6.data.remote.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,7 +28,7 @@ fun provideOkHttpClient(interceptor: HttpLoggingInterceptor) = OkHttpClient().ne
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
-    .baseUrl(com.example.youtubehwmth6.BuildConfig.BASE_URL)
+    .baseUrl(BuildConfig.BASE_URL)
     .client(okHttpClient)
     .build()
 
